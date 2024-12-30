@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 
-
 {% block title %}
-    Your Company
-{% endblock  %}
-
+  Your Company
+{% endblock %}
 
 {% block content %}
-    Name: {{company.name}}
-    <br>
-    Address: {{company.address}}
-    <br>
-    Contact Number: {{company.contact_number}}
-    <br>
+  <div class="m-5">
+    <h2>Name: {{ company.name }}</h2>
+    <h2>Address: {{ company.address }}</h2>
+    <h2>Contact Number: {{ company.contact_number }}</h2>
+  </div>
 {% endblock %}
-    
-    

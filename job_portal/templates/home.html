@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 
 {% block title %}
     Home Page
@@ -5,19 +6,9 @@
 
 
 {% block content %}
-    
-    {% if user.is_authenticated %}
-        Hi, {{user.username}}!
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Log Out</button>
-          </form>
-    {% else %}
-        You are not logged in!
-        <br>
-        <a href="{% url 'login' %}">Log In</a>
-    {% endif %}
-  
+    <div class="container-sm">
+        Welocome to JOB PORTAL.
+    </div>
 {% endblock %}
     
     
