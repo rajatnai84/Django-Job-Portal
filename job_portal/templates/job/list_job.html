@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Job listings
+{% endblock  %}
+
+{% block content %}
+    <a href="{% url 'create-job' %}">Create a new Job</a>
+    <h2>Job Listings</h2>
+    <ul>
+        {% for job in jobs %}
+            <li>
+                <a href="{% url 'update-job' job.id %}">{{ job.title }}</a> - 
+                <a href="{% url 'delete-job' job.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
