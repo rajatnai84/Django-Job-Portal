@@ -5,6 +5,13 @@ from django.urls import reverse_lazy
 from django.contrib.auth import login
 
 def register(request):
+    """
+    get: 
+    Return registration form if not already logged in else company view.
+
+    post:
+    Create new user instance do login and redirect to company view.
+    """
     if request.user.is_authenticated:
         return redirect('company-view') 
     if request.method == 'POST':

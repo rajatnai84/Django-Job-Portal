@@ -6,7 +6,9 @@ class CompanyForm(forms.ModelForm):
         model = Company
         fields = ['name', 'address', 'contact_number']
 
+
     def save(self, commit=True, user=None):
+        """Custom company save method to save the current user as owner."""
         instance = super().save(commit=False)
         if user:
             instance.owner = user
