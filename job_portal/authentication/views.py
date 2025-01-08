@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView
 from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
 from django.contrib.auth import login
 
 def register(request):
@@ -13,7 +11,7 @@ def register(request):
     Create new user instance do login and redirect to company view.
     """
     if request.user.is_authenticated:
-        return redirect('company-view') 
+        return redirect('company-view')
     if request.method == 'POST':
         user_form = UserCreationForm(request.POST)
         if user_form.is_valid():

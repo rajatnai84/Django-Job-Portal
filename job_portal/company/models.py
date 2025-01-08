@@ -2,7 +2,10 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.contrib.auth.models import User
 
-phone_regex = RegexValidator(regex=r'^\+?\d{9,15}$', message={"Contact number is not in valid format."})
+phone_regex = RegexValidator(
+        regex=r'^\+?\d{9,15}$',
+        message={"Contact number is not in valid format."}
+        )
 
 class Company(models.Model):
     """
